@@ -29,12 +29,28 @@ Install Dependencies:
     node install 
     
 ## Setup
-DB Settings:
-- Add your DB details to settings.py
+Cloudinary Account:
+  - Register for free -> https://cloudinary.com/
+  - You will need "Your Cloud Name"
+  - Setup an Upload Preset:
+    - Settings -> Upload -> Upload Presets
+    - You will need "Upload Preset Name"
+    - Make sure that the Mode setting is set to "Unsigned"
+    
+Create .env file in root directory with the following:
+  - GraphQL API Endpoint
+  - Cloudinary Settings
 
-DB Migrations:
+Example .env file:
+  
+    REACT_APP_API_URL=http://127.0.0.1:8000/graphql/
+    REACT_APP_CLOUDINARY_CLOUD_NAME=mycloud
+    REACT_APP_CLOUDINARY_UPLOAD_PRESET_NAME=reacttrackspreset
+    
+## Run
+Start development server:
 
-    python manage.py migrate
+    npm start
 
 ## TODO
 - unit tests

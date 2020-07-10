@@ -13,7 +13,11 @@ import Error from "./components/Shared/Error";
 export const UserContext = React.createContext();
 
 const Root = () => (
-  <Query query={ME_QUERY}>
+  // default fetchPolicy='cache-first'
+  // cache-and-network -> tries to resolve from cache, but also makes network request
+  // network-only -> always send a network request
+  // no-cache -> always sends a network request, does no cache response
+  <Query query={ME_QUERY} fetchPolicy='cache-and-network'>
     {/* render prop function */}
     {({data, loading, error}) => {
       if (loading) return <Loading />;

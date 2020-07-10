@@ -19,7 +19,6 @@ import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 
 import Error from "../Shared/Error";
 import { UserContext } from "../../Root";
-// import { GET_TRACKS_QUERY } from "../../pages/App";
 
 const UpdateTrack = ({ classes, track }) => {
   const currentUser = useContext(UserContext);

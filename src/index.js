@@ -9,7 +9,8 @@ import Root from "./Root";
 import Auth from './components/Auth';
 
 const client = new ApolloClient({
-  uri: 'http://127.0.0.1:8000/graphql/',
+  // uri: 'http://127.0.0.1:8000/graphql/',
+  uri: `${process.env.REACT_APP_API_URL}`,
   // include auth header on requests
   fetchOptions: {
     credentials: "include"

@@ -47,9 +47,9 @@ const UpdateTrack = ({ classes, track }) => {
       const data = new FormData();
       data.append('file', file);
       data.append('resource_type', 'raw');
-      data.append('upload_preset', 'reacttracks');
-      data.append('cloud_name', 'dwh2cf9bz');
-      const result = await axios.post('https://api.cloudinary.com/v1_1/dwh2cf9bz/raw/upload', data);
+      data.append('upload_preset', `${process.env.REACT_APP_CLOUDINARY_UPLOAD_PRESET_NAME}`);
+      data.append('cloud_name', `${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}`);
+      const result = await axios.post(`https://api.cloudinary.com/v1_1/${process.env.REACT_APP_CLOUDINARY_CLOUD_NAME}/raw/upload`, data);
       return result.data.url;
     } catch (err) {
       console.error('Error uploading file.', err);

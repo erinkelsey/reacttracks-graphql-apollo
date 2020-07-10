@@ -35,7 +35,7 @@ const TrackList = ({ classes, tracks }) => (
                 </Link>
               }
             />
-            <AudioPlayer />
+            <AudioPlayer url={track.url} />
           </ListItem>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails className={classes.details}>

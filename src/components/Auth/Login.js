@@ -19,6 +19,7 @@ const Login = ({ classes, setNewUser }) => {
   const handleSubmit = async (event, tokenAuth, client) => {
     event.preventDefault();
     const result = await tokenAuth();
+    // insecure storage
     localStorage.setItem('authToken', result.data.tokenAuth.token);
     client.writeData({ data: { isLoggedIn: true } })
   }

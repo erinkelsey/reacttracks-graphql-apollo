@@ -35,26 +35,20 @@ const Root = () => (
   </Query>
 )
 
-const ME_QUERY = gql`
+export const ME_QUERY = gql`
   {
     me {
       id
       username
       email
+      likeSet {
+        track {
+          id
+        }
+      }
     }
   }
 
 `
-
-// const GET_TRACKS_QUERY = gql`
-//   {
-//     tracks {
-//       id
-//       title
-//       description
-//       url
-//     }
-//   }
-// `
 
 export default withRoot(Root);
